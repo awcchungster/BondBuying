@@ -9,13 +9,13 @@ Trade execution is not included in this tool, but a script can be written to int
 
 ## Setup
 
-###Get a list of bonds available
+### Get a list of bonds available
 
 To find the list of current treasury bills for sale, you'll need extract a CSV file from your broker's data.
 
 If you have a Schwab account, this tool already has that completed. You can save the treasury search results to feed to this algorithm. Visit the `https://client.schwab.com/Areas/Trade/FixedIncomeSearch/FISearch.aspx/Treasuries` after logging in, and select the maturity date from this month to one year from now. Save the page html. Repeat for each page of bonds. Run `java -jar bond_ladder.jar parseSchwabBondsPage file1.html file2.html`. Additional files can be appended in the same format. 
 
-###Download your portfolio
+### Download your portfolio
 
 If you have bonds already in your portfolio, the algorithm can take that into account to prevent overweighing. the CSV file downloaded from your broker should be formatted as follows. 
 
@@ -26,7 +26,7 @@ Cash should have a description with the title "cash" and the total amount in the
     "912796PC7","US TREASURY BILL18 U S T BILL DUE 04/26/18","5,000","$99.75733","N/A","N/A"
     "Cash & Money Market","--","--","--","--","--","$1000000.00","$0.00","0%","--","--","--","--"
 
-###Set your allocations
+### Set your allocations
 
 Your bond buying preferences are set in allocation.xlsx. There are 2 categories to note: special events, and general allocation.
 
